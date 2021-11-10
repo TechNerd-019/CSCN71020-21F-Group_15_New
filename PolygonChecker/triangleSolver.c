@@ -2,25 +2,15 @@
 #include <stdbool.h>
 #include "triangleSolver.h"
 
-char* analyzeTriangle(int side1, int side2, int side3) {
-	char* result = "";
-	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
-		result = "Not a triangle";
+char* checkTriangle(int side1, int side2, int side3) {
+	char* resultCheck = "";
+	if (side1 < side2 + side3 && side2 < side1 + side3 && side3 < side1 + side2) {
+		resultCheck = "Valid triangle.\n";
+		double angle1, angle2, angle3, semiPerimeter, area, pi, R;
+		return resultCheck;
 	}
-	else if (side1 == side2 && side1 == side3) {
-		result = "Equilateral triangle";
-	}
-	else if ((side1 == side2 && side1 != side3) || 
-		(side1 == side3 && side1 != side2))
-	{
-		result = "Isosceles triangle";
-	}
-	else {
-		result = "Scalene triangle";
 	}
 
-	return result;
-}
 
 char* analyzeTriangle(int side1, int side2, int side3)
 {
