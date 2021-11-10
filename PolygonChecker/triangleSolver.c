@@ -7,9 +7,20 @@ char* checkTriangle(int side1, int side2, int side3) {
 	if (side1 < side2 + side3 && side2 < side1 + side3 && side3 < side1 + side2) {
 		resultCheck = "Valid triangle.\n";
 		double angle1, angle2, angle3, semiPerimeter, area, pi, R;
-		return resultCheck;
+		pi = acos(-1);
+
+		semiPerimeter = (side1 + side2 + side3) / 2;
+		area = sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3)); //Using Heron's formula.
+
+		R = ((double)side1 * (double)side2 * (double)side3) / (4 * area);
+	
 	}
+	else {
+		printf("Not a triangle.\n");
 	}
+
+	return resultCheck;
+}
 
 
 char* analyzeTriangle(int side1, int side2, int side3)
