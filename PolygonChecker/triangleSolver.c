@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 #include "triangleSolver.h"
 
 char* checkTriangle(int side1, int side2, int side3) {
@@ -13,7 +14,14 @@ char* checkTriangle(int side1, int side2, int side3) {
 		area = sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3)); //Using Heron's formula.
 
 		R = ((double)side1 * (double)side2 * (double)side3) / (4 * area);
-	
+
+		//angle1 = (180 / pi) * asin(side1 / 2 * R); [Missed parenthesis breaks the calculation].
+		angle1 = (180 / pi) * asin(side1 / (2 * R));
+		angle2 = (180 / pi) * asin(side2 / (2 * R));
+		angle3 = (180 / pi) * asin(side3 / (2 * R));
+
+		printf("Angle 1: %.2f, Angle2: %.2f, Angle 3: %.2f\n", angle1, angle2, angle3);
+
 	}
 	else {
 		printf("Not a triangle.\n");
