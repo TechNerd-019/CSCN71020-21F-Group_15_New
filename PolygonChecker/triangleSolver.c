@@ -4,6 +4,7 @@
 #include "triangleSolver.h"
 
 char* checkTriangle(int side1, int side2, int side3) {
+	printf("%d %d %d", side1, side2, side3);
 	char* resultCheck = "";
 	if (side1 < side2 + side3 && side2 < side1 + side3 && side3 < side1 + side2) {
 		resultCheck = "Valid triangle.\n";
@@ -55,5 +56,7 @@ char* analyzeTriangle(int side1, int side2, int side3)
 		result = "Scalene triangle";
 	} return result;
 }
+
+
 
 
