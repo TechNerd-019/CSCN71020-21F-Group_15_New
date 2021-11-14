@@ -28,7 +28,18 @@ void analyzeRectangle(double x1, double y1, double x2, double y2, double x3, dou
 	printf("\nLast step to verify that it's a rectangle is to determine whether diagonal divides the rectangle into two right angle triangles");
 	printf("\nDistance between point A and point C(diagonal) is %.2f\n", diagonal_distance);
 
-	
+	if(distance1 == distance3 && distance2 == distance4 && pow(diagonal_distance, 2) == (pow(distance1, 2) + pow(distance2, 2)))
+	{
+		printf("\nDistance AB is equal to Distance CD and Distance BC is equal to Distance DA");
+		printf("\nThus opposite sides are equal!\n");
+		printf("\nIt is a Rectangle!!\n");
+		printf("\n The area of the rectangle is equal to: %.2f\n", area);
+		printf("\n The perimeter of the rectangle is equal to: %.2f\n", perimeter);
+	}
+	else
+{
+printf("\n The coordinates which you have entered do not form a rectangle.\n");
+}
 	
 
 
