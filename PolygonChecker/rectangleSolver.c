@@ -7,7 +7,7 @@
 
 
 
-void analyzeRectangle(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
+double analyzeRectangle(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
 	
 	double distance1, distance2, distance3, distance4, diagonal_distance, area, perimeter;
 
@@ -37,13 +37,13 @@ void analyzeRectangle(double x1, double y1, double x2, double y2, double x3, dou
 		printf("\n The perimeter of the rectangle is equal to: %.2f\n", perimeter);
 	}
 	else
-{
-printf("\n The coordinates which you have entered do not form a rectangle.\n");
+
+	printf("\n The coordinates which you have entered do not form a rectangle.\n");
+
+	return area, perimeter;
 }
-	
 
 
-}
 	 
 	
 
