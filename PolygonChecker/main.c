@@ -10,13 +10,13 @@
 int side = 0;
 double x1, y1, x2, y2, x3, y3, x4, y4;
 int rectangleSides = 0;
+int shapeChoice;
 
 int main() {
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
-
-		int shapeChoice = printShapeMenu();
+		printShapeMenu();
 
 		switch (shapeChoice)
 		{
@@ -34,12 +34,45 @@ int main() {
 		case 0:
 			continueProgram = false;
 			break;
-		default:
-			printf_s("Invalid value entered.\n");
-			break;
+
 		case 2:
 			// Input request and validation.
-			printf("Rectangle Selected.\n\n");
+			printf("Enter the coordinates for A (x1, y1) - no commas, single space: ");
+			if (scanf_s("%lf %lf", &x1, &y1))
+			{
+				printf("Enter the coordinates for B (x2, y2) - no commas, single space: ");
+				if (scanf_s("%lf %lf", &x2, &y2))
+				{
+					printf("Enter the coordinates for C (x3, y3) - no commas, single space: ");
+					if (scanf_s("%lf %lf", &x3, &y3))
+					{
+						printf("Enter the coordinates for D (x4, y4) - no commas, single space:  ");
+						if (scanf_s("%lf %lf", &x4, &y4))
+						{
+							printf("Input has been validated. Function will now be executed.\n");
+							analyzeRectangle(x1, y1, x2, y2, x3, y3, x4, y4);
+						}
+						else
+						{
+							printf("Invalid input.");
+						}
+					}
+					else
+					{
+						printf("Invalid input.");
+					}
+				}
+				else
+				{
+					printf("Invalid input.");
+				}
+			}
+			else
+			{
+				printf("Invalid input.");
+			}
+
+			/*printf("Rectangle Selected.\n\n");
 			double x1, x2, y1, y2, x3, y3, x4, y4;
 			printf("Enter the coordinates for A (x1, y1) - no commas, single space: ");
 			scanf_s("%lf %lf", &x1, &y1);
@@ -49,20 +82,17 @@ int main() {
 			scanf_s("%lf %lf", &x3, &y3);
 			printf("Enter the coordinates for D (x4, y4) - no commas, single space: ");
 			scanf_s("%lf %lf", &x4, &y4);
-			
-			analyzeRectangle(x1, y1, x2, y2, x3, y3, x4, y4);
+			*/
+			//analyzeRectangle(x1, y1, x2, y2, x3, y3, x4, y4);
 
 				/*double  rectangleSides[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 				double* rectangleSidesPtr = getRectangleSides(rectangleSides);*/
-				//analyzeRectangle(x1, y1, x2, y2, x3, y3, x4, y4);
-				break;
-			}
-
+				
+			break;
 		}
-
-
-		return 0;
 	}
+	return 0;
+}
 
 
 void printWelcome() {
@@ -78,11 +108,11 @@ int printShapeMenu() {
 	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
 
-	int shapeChoice;
-
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	scanf_s("%d", &shapeChoice);
 
+	while ((getchar()) != '\n');
+	
 	return shapeChoice;
 }
 
