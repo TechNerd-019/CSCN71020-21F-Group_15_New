@@ -58,7 +58,7 @@ double checkInsideAngleOfTriangle(int side1, int side2, int side3)
 	angle2 = (180 / pi) * asin(side2 / (2 * R));
 	angle3 = (180 / pi) * asin(side3 / (2 * R));
 
-	printf("Angle 1: %.2f, Angle2: %.2f, Angle 3: %.2f\n", angle1, angle2, angle3);
+	printf("\nAngle 1: %.2f, Angle2: %.2f, Angle 3: %.2f\n", angle1, angle2, angle3);
 	double sum_of_angles = angle1 + angle2 + angle3;
 	return sum_of_angles;
 }

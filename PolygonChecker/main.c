@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <ctype.h>
-
 #include "main.h"
 #include "triangleSolver.h"
-
 #include "rectangleSolver.h"
 
 int side = 0;
@@ -30,6 +28,7 @@ int main() {
 			double anglesResult = checkInsideAngleOfTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 		    printf_s("%s\n", result);
 			printf_s("%s\n", resultCheck);
+			printf_s("%lf\n", anglesResult);
 
 
 		case 0:
