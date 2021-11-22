@@ -39,8 +39,12 @@ double analyzeRectangle(double x1, double y1, double x2, double y2, double x3, d
 	else
 
 	printf("\n The coordinates which you have entered do not form a rectangle.\n");
+	double sum = pow(distance1, 2) + pow(distance2, 2);
 
-	return area, perimeter;
+	//created a variable sum which calculates the distance between two sides 
+	//as in rectangle there are 2 right angle triangles and the sum 
+	//should be equal to the sum of squares of two sides(according to pythagoras theorm).
+	return sum;
 }
 
 
