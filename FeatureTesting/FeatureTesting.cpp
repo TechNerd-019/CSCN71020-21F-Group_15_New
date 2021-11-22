@@ -3,7 +3,7 @@
 extern "C"  char* checkTriangle(int side1, int side2, int side3);
 extern "C" void analyzeRectangle(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4);
 extern "C"  char* analyzeTriangle(int side1, int side2, int side3);
-extern "C"
+extern "C" double checkInsideAngleOfTriangle(int side1, int side2, int side3);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -42,6 +42,16 @@ namespace FeatureTesting
 			Assert::AreEqual(expected, outcome);
 
 		}
+		TEST_METHOD(triangle_Angle_Validation)
+		{
+			int side1 = 3, side2 = 4, side3 = 5;
+			int expected = 180;
+			int outcome;
+			outcome = checkInsideAngleOfTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, outcome);
+
+		}
+		
 
 		/*TEST_METHOD(rectangleAreaReturnTest)
 		{
